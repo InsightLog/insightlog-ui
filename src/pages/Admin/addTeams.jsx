@@ -15,7 +15,6 @@ export default function AddTeam() {
     const fetchUsers = async () => {
       try {
         const url = "/users/without-team";
-        console.log("Fetching users without team from:", url);
         const res = await api.get(url);
         setUsers(res.data);
       } catch (err) {
