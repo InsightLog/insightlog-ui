@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/context/authContext";
+import { useAuth } from "@/context/AuthContext.jsx";
 import MotionWrapper from "@/components/MotionWrapper";
 import AuthForm from "@/components/AuthForm";
 
