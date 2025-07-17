@@ -85,7 +85,7 @@ export default function CLIPage() {
             <section className="mb-10">
                 <h2 className="text-xl font-semibold mb-2">🛠 Developer Usage</h2>
                 <CodeBlock
-                    code={`git clone https://github.com/xdSushil/insightlog-cli.git
+                    code={`git clone https://github.com/InsightLog/insightlog-cli.git
 cd insightlog-cli
 npm install
 node bin/index.js`}
@@ -93,7 +93,7 @@ node bin/index.js`}
             </section>
 
             <footer className="text-xs text-gray-500 mt-10 border-t border-white/10 pt-6">
-                MIT License © Sushil R — <a href="https://github.com/xdSushil/insightlog" className="text-purple-400 hover:underline">GitHub</a>
+                MIT License © Sushil R — <a href="https://github.com/InsightLog" className="text-purple-400 hover:underline">GitHub</a>
             </footer>
         </motion.div>
     );

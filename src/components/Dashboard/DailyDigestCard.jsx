@@ -66,9 +66,9 @@ const DailyDigestCard = () => {
       <p className="text-sm text-gray-300 mb-2">
         Top Contributor:{" "}
         <span className="text-white font-medium">
-          {digest.topContributor.name}
+          {digest.topContributor?.name || "-"}
         </span>{" "}
-        ({digest.topContributor.count} logs)
+        ({digest.topContributor?.count || "-"} logs)
       </p>
 
       <div className="flex flex-wrap gap-2 mb-4">

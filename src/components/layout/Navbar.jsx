@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
+import TryDemoDialog from "@/components/modals/TryDemoDialog";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  const [showDemoDialog, setShowDemoDialog] = useState(false);
 
   const toggleMenu = () => setOpen(!open);
 
@@ -69,6 +71,14 @@ export default function Navbar() {
             </>
           ) : (
             <>
+              <button
+                onClick={() => setShowDemoDialog(true)}
+                className="hover:text-cyan-400"
+              >
+                Try Demo
+              </button>
+
+              <TryDemoDialog open={showDemoDialog} onClose={() => setShowDemoDialog(false)} />
               <Link to="/v1/cli-docs" className="hover:text-cyan-400">CLI</Link>
               <Link to="/v1/features" className="hover:text-cyan-400">Features</Link>
               <Link to="/v1/about" className="hover:text-cyan-400">About</Link>

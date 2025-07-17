@@ -38,7 +38,7 @@ export default function LandingPage() {
     ];
 
     return (
-        <div ref={ref} className="relative bg-[#0f0f1a] text-white overflow-x-hidden">
+        <div ref={ref} className="relative bg-[#0f0f1a] text-white overflow-x-hidden overflow-y-hidden">
             {/* Spotlight Background Effect */}
             <motion.div
                 className="absolute inset-0 bg-radial -z-10"
