@@ -1,0 +1,46 @@
+.jsondiffpatch-delta {
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.jsondiffpatch-delta pre {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+.jsondiffpatch-delta .jsondiffpatch-property-name {
+  font-weight: bold;
+}
+.jsondiffpatch-delta .jsondiffpatch-value {
+  color: #00a;
+}
+.jsondiffpatch-delta .jsondiffpatch-added {
+  background: #dfd;
+  color: #060;
+}
+.jsondiffpatch-delta .jsondiffpatch-deleted {
+  background: #fee;
+  color: #900;
+  text-decoration: line-through;
+}
+.jsondiffpatch-delta .jsondiffpatch-modified {
+  background: #fe0;
+}
+.jsondiffpatch-delta .jsondiffpatch-unchanged {
+  color: #bbb;
+}
+.jsondiffpatch-delta .jsondiffpatch-textdiff-added {
+  background: #9f9;
+}
+.jsondiffpatch-delta .jsondiffpatch-textdiff-deleted {
+  background: #f99;
+}
+.jsondiffpatch-delta .jsondiffpatch-movedestination {
+  background: #ffa;
+}
+.jsondiffpatch-delta .jsondiffpatch-unchanged-visible {
+  visibility: visible;
+}
+.jsondiffpatch-delta .jsondiffpatch-unchanged-hidable {
+  visibility: hidden;
+}
