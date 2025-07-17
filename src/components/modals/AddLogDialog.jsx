@@ -106,15 +106,16 @@ export default function AddLogDialog({ onClose, onSuccess }) {
             <div className="mt-3">
               <p className="text-sm text-gray-400 mb-1">🔥 Popular Tags:</p>
               <div className="flex flex-wrap gap-2">
-                {hotTags.map((tag, idx) => (
+                {hotTags.map((item, idx) => (
                   <button
                     key={idx}
-                    onClick={() => handleHotTagClick(tag)}
+                    onClick={() => handleHotTagClick(item.tag)}
                     className="text-xs px-3 py-1 rounded-full bg-purple-600/20 text-purple-300 hover:bg-purple-700/30 transition"
                   >
-                    #{tag}
+                    #{item.tag}
                   </button>
                 ))}
+
               </div>
             </div>
           )}
