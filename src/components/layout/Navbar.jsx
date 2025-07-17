@@ -116,6 +116,12 @@ export default function Navbar() {
             </>
           ) : (
             <>
+              <button
+                onClick={() => setShowDemoDialog(true)}
+                className="hover:text-cyan-400 mr-65"
+              >
+                Try Demo
+              </button>
               <Link to="/v1/cli-docs" onClick={toggleMenu}>CLI</Link>
               <Link to="/v1/features" onClick={toggleMenu}>Features</Link>
               <Link to="/v1/about" onClick={toggleMenu}>About</Link>

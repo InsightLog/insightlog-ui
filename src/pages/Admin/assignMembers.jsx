@@ -36,7 +36,7 @@ export default function AssignMembers() {
                 const [tagsRes, logsRes, gapsRes] = await Promise.all([
                     api.get("/logs/hot-tags?teamId=" + teamId),
                     api.get(`/logs?teamId=${teamId}`),
-                    api.get(`/logs/gaps/${teamId}`),
+                    api.get(`/logs/gaps?${teamId}`),
                 ]);
 
                 setHotTags(tagsRes.data || []); 
@@ -104,12 +104,12 @@ export default function AssignMembers() {
                                 value={inviteEmail}
                                 onChange={(e) => setInviteEmail(e.target.value)}
                                 placeholder="Invite email"
-                                className="bg-gray-800 ml-2 text-sm px-2 py-2 rounded-md border border-gray-600 focus:outline-none focus:ring focus:ring-purple-600"
+                                className="bg-gray-800 text-sm px-2 py-2 rounded-md border border-gray-600 focus:outline-none focus:ring focus:ring-purple-600"
                             />
                             <button
                                 onClick={sendInvite}
                                 disabled={sending}
-                                className="flex items-center ml-2 gap-2 bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 px-4 py-2 rounded-lg font-semibold transition"
+                                className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 px-4 py-2 rounded-lg font-semibold transition"
                             >
                                 <PlusIcon className="w-4 h-4" />
                                 Invite
