@@ -1,6 +1,6 @@
 // src/components/modals/AddLogDialog.tsx
 import { Dialog } from "@headlessui/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import { toast } from "react-hot-toast";
 import { XMarkIcon } from "@heroicons/react/24/solid";
@@ -17,6 +17,16 @@ export default function AddLogDialog({ onClose, onSuccess }) {
   const [hotTags, setHotTags] = useState([]);
   const { user } = useAuth();
 
+  const simpleMdeOptions = useMemo(
+    () => ({
+      placeholder: "Write your markdown content here...",
+      spellChecker: false,
+      theme: "dark",
+    }),
+    []
+  );
+
+
   const handleSubmit = async () => {
     if (!title || !content) return toast.error("Fill all fields");
     setLoading(true);
@@ -26,6 +36,7 @@ export default function AddLogDialog({ onClose, onSuccess }) {
         content,
         tags: tags.split(",").map((t) => t.trim()),
         teamId: user?.teamId,
+        authorId: user?.id
       });
       toast.success("Log created!");
       onSuccess?.();
@@ -53,7 +64,7 @@ export default function AddLogDialog({ onClose, onSuccess }) {
       setTags(updated);
     }
   };
-
+  // Fetch hot tags when the component mounts or teamId changes
   useEffect(() => {
     if (user?.teamId) fetchHotTags();
   }, [user?.teamId]);
@@ -82,15 +93,10 @@ export default function AddLogDialog({ onClose, onSuccess }) {
             placeholder="Log Title"
             className="w-full mb-4 bg-[#2b2b3f] p-3 rounded-md border border-gray-600 outline-none"
           />
-
           <SimpleMDE
             value={content}
             onChange={setContent}
-            options={{
-              placeholder: "Write your markdown content here...",
-              spellChecker: false,
-              theme: "dark",
-            }}
+            options={simpleMdeOptions}
           />
 
           <input
